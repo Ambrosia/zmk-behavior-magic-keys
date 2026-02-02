@@ -1,0 +1,16 @@
+# Copyright (c) 2026 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: Magic Keys Behaviour
+
+compatible: "zmk,behavior-magic-keys"
+
+include: one_param.yaml # Additional parameters
+
+properties:
+  magic-rules:
+    type: array
+    required: true
+  skip-magic-rules:
+    type: array
+    required: true
