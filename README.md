@@ -4,8 +4,9 @@ This module adds the `magic-keys` behavior to ZMK. This behaviour implements the
 magic keys as defined by the wonderful [Afterburner](https://blog.simn.me/posts/2025/afterburner/)
 keyboard layout by [Simon Zeng](https://simn.me/).
 
-Currently this is a quick and dirty implementation that will remain on the `single-instance`
-branch. In the future I will be working on a better, more flexible implementation that makes use of
+Currently this is a quick and dirty implementation that will remain available under the
+`v0.0.1` and `single-instance` git tags.
+In the future I will be working on a better, more flexible implementation that makes use of
 multiple behaviour instances.
 
 ## Usage
