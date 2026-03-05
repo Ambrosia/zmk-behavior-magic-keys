@@ -1,0 +1,5 @@
+.build
+.direnv
+.west
+.zmk
+.clangd
