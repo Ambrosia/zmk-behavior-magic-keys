@@ -1,0 +1,14 @@
+kp_pressed: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+kp_pressed: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+skip_magic: looking up key in skip magic rules: usage page 0x07 keycode 0x16
+skip_magic: keycode not found in skip magic rule, repeating
+kp_pressed: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+kp_pressed: usage_page 0x07 keycode 0x10 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x10 implicit_mods 0x00 explicit_mods 0x00
+magic: looking up key in magic rules: usage page 0x07 keycode 0x10
+magic: keycode not found in magic rule, repeating
+kp_pressed: usage_page 0x07 keycode 0x10 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x10 implicit_mods 0x00 explicit_mods 0x00

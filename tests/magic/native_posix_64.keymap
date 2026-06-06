@@ -1,0 +1,14 @@
+#include "../behaviour_keymap.dtsi"
+
+&kscan {
+  events = <
+    // Press A
+    ZMK_MOCK_PRESS(1, 8, 1000)
+    // Release A
+    ZMK_MOCK_RELEASE(1, 8, 10)
+    // Press Magic
+    ZMK_MOCK_PRESS(1, 6, 100)
+    // Release Magic
+    ZMK_MOCK_RELEASE(1, 6, 10)
+  >;
+};

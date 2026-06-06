@@ -1,0 +1,26 @@
+kp_pressed: usage_page 0x07 keycode 0x0C implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x0C implicit_mods 0x00 explicit_mods 0x00
+kp_pressed: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+magic: looking up key in magic rules: usage page 0x07 keycode 0x16
+magic: keycode not found in magic rule, repeating
+kp_pressed: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+kp_pressed: usage_page 0x07 keycode 0x18 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x18 implicit_mods 0x00 explicit_mods 0x00
+magic: looking up key in magic rules: usage page 0x07 keycode 0x18
+magic: found rule match: usage page 0x07 keycode 0x08
+kp_pressed: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+kp_pressed: usage_page 0x07 keycode 0x15 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x15 implicit_mods 0x00 explicit_mods 0x00
+kp_pressed: usage_page 0x07 keycode 0x18 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x18 implicit_mods 0x00 explicit_mods 0x00
+skip_magic: looking up key in skip magic rules: usage page 0x07 keycode 0x15
+skip_magic: found rule match: usage page 0x07 keycode 0x0f
+kp_pressed: usage_page 0x07 keycode 0x0F implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x0F implicit_mods 0x00 explicit_mods 0x00
+skip_magic: looking up key in skip magic rules: usage page 0x07 keycode 0x18
+skip_magic: found rule match: usage page 0x07 keycode 0x08
+kp_pressed: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00

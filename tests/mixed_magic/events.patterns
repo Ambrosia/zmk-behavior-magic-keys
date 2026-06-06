@@ -1,0 +1,3 @@
+s/.*hid_listener_keycode/kp/p
+s/.*apply_magic_rules:/magic:/p
+s/.*apply_skip_magic_rules:/skip_magic:/p

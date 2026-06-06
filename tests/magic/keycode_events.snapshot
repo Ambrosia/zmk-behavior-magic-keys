@@ -1,0 +1,6 @@
+kp_pressed: usage_page 0x07 keycode 0x04 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x04 implicit_mods 0x00 explicit_mods 0x00
+magic: looking up key in magic rules: usage page 0x07 keycode 0x04
+magic: found rule match: usage page 0x07 keycode 0x12
+kp_pressed: usage_page 0x07 keycode 0x12 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0x12 implicit_mods 0x00 explicit_mods 0x00

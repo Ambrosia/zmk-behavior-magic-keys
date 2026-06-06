@@ -1,0 +1,38 @@
+#include "../behaviour_keymap.dtsi"
+
+// Examples from the Afterburner keyboard layout blog post.
+// This tests both ways magic and skip magic can be mixed.
+// This usage produces the words "issue" and "rule", according to Afterburner's rules.
+
+&kscan {
+  events = <
+    // Press I
+    ZMK_MOCK_PRESS(1, 10, 1000)
+    ZMK_MOCK_RELEASE(1, 10, 10)
+    // Press S
+    ZMK_MOCK_PRESS(1, 3, 10)
+    ZMK_MOCK_RELEASE(1, 3, 10)
+    // Press Magic
+    ZMK_MOCK_PRESS(1, 6, 10)
+    ZMK_MOCK_RELEASE(1, 6, 10)
+    // Press U
+    ZMK_MOCK_PRESS(0, 9, 10)
+    ZMK_MOCK_RELEASE(0, 9, 10)
+    // Press Skip Magic
+    ZMK_MOCK_PRESS(1, 7, 10)
+    ZMK_MOCK_RELEASE(1, 7, 10)
+    
+    // Press R
+    ZMK_MOCK_PRESS(3, 1, 10)
+    ZMK_MOCK_RELEASE(3, 1, 10)
+    // Press U
+    ZMK_MOCK_PRESS(0, 9, 10)
+    ZMK_MOCK_RELEASE(0, 9, 10)
+    // Press Skip Magic
+    ZMK_MOCK_PRESS(1, 7, 10)
+    ZMK_MOCK_RELEASE(1, 7, 10)
+    // Press Magic
+    ZMK_MOCK_PRESS(1, 6, 10)
+    ZMK_MOCK_RELEASE(1, 6, 10)
+  >;
+};

@@ -1,0 +1,66 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/kscan_mock.h>
+
+/ {
+  behaviors {
+    magic: magic_keys {
+      compatible = "zmk,behavior-magic-keys";
+      #binding-cells = <1>;
+      
+      magic-rules = <
+        A O
+        G S
+        H Y
+        U E
+        X T
+        Y H
+      >;
+      
+      skip-magic-rules = <
+        A O
+        B N
+        D T
+        F S
+        G S
+        H Y
+        J Y
+        K T
+        L R
+        M K
+        O A
+        P N
+        Q E
+        R L
+        U E
+        V T
+        X T
+        Y H
+        COMMA I
+        DOT I
+        MINUS I
+        SLASH A
+        SEMI E
+      >;
+    };
+  };
+  
+  keymap {
+    compatible = "zmk,keymap";
+    
+    base {
+      bindings = <
+        &none &kp J &kp B &kp G &kp D &kp K   &kp Z      &kp C     &kp O     &kp U    &kp COMMA &none
+        &kp Q &kp H &kp N &kp S &kp T &kp M   &magic 0   &magic 1  &kp A     &kp E    &kp I     &kp MINUS
+        &none &kp Y &kp P &kp F &kp V &kp X   &kp SQT    &kp W     &kp SLASH &kp SEMI &kp DOT   &none
+                          &none &kp R &kp L   &kp LSHIFT &kp SPACE &none
+      >;
+    };
+  };
+};
+
+&kscan {
+  rows = <4>;
+  columns = <12>;
+  exit-after;
+};
