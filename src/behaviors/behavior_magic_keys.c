@@ -94,13 +94,12 @@ bool recordable_key(uint32_t keycode) {
 
 void record_key(uint32_t keycode) {
     if (!recordable_key(keycode)) {
-        LOG_DBG("non recordable key pressed 0x%08x", keycode);
         return;
     }
 
     magic_keys_data.history[1] = magic_keys_data.history[0];
 
-    LOG_DBG("recording key press 0x%08x", keycode);
+    LOG_DBG("recorded key 0x%02x 0x%02x 0x%02x 0x%02x", ZMK_HID_USAGE_PAGE(keycode), ZMK_HID_USAGE_ID(keycode), ZMK_HID_IMPLICIT_MODS(keycode), ZMK_HID_EXPLICIT_MODS(keycode));
     magic_keys_data.history[0].kind = OP_NONE;
     magic_keys_data.history[0].kc = keycode;
 }
@@ -142,18 +141,19 @@ static uint32_t apply_magic_rules(const struct behavior_magic_keys_config *cfg, 
     // Look up the key in the magic rules. As the magic rules are defined as an array of keys
     // where an even index is the input key and the odd index is the output key after it,
     // the result is at i + 1.
+    LOG_DBG("looking up key in magic rules: usage page 0x%02x keycode 0x%02x", ZMK_HID_USAGE_PAGE(keycode), ZMK_HID_USAGE_ID(keycode));
 
     // Checking with i + 1 instead of i, this should stop us from accessing it when it may
     // be out of array bounds.
     for (int i = 0; i + 1 < cfg->magic_rules_len; i += 2) {
-        LOG_DBG("magic rule: does keycode 0x%08x match 0x%08x", keycode, cfg->magic_rules[i]);
         if (cfg->magic_rules[i] == keycode) {
-            LOG_DBG("magic rule: yes! 0x%08x matched", cfg->magic_rules[i + 1]);
-            return cfg->magic_rules[i + 1];
+            zmk_key_t matched = cfg->magic_rules[i + 1];
+            LOG_DBG("found rule match: usage page 0x%02x keycode 0x%02x", ZMK_HID_USAGE_PAGE(matched), ZMK_HID_USAGE_ID(matched));
+            return matched;
         }
     }
 
-    LOG_DBG("magic rule: keycode 0x%08x not found in magic rule, repeating", keycode);
+    LOG_DBG("keycode not found in magic rule, repeating");
     return keycode;
 }
 
@@ -162,19 +162,19 @@ static uint32_t apply_skip_magic_rules(const struct behavior_magic_keys_config *
     // Look up the key in the magic rules. As the magic rules are defined as an array of keys
     // where an even index is the input key and the odd index is the output key after it,
     // the result is at i + 1.
+    LOG_DBG("looking up key in skip magic rules: usage page 0x%02x keycode 0x%02x", ZMK_HID_USAGE_PAGE(keycode), ZMK_HID_USAGE_ID(keycode));
 
     // Checking with i + 1 instead of i, this should stop us from accessing it when it may
     // be out of array bounds.
     for (int i = 0; i + 1 < cfg->skip_magic_rules_len; i += 2) {
-        LOG_DBG("skip magic rule: does keycode 0x%08x match 0x%08x", keycode,
-                cfg->skip_magic_rules[i]);
         if (cfg->skip_magic_rules[i] == keycode) {
-            LOG_DBG("skip magic rule: yes! 0x%08x matched", cfg->skip_magic_rules[i + 1]);
-            return cfg->skip_magic_rules[i + 1];
+        	zmk_key_t matched = cfg->skip_magic_rules[i + 1];
+            LOG_DBG("found rule match: usage page 0x%02x keycode 0x%02x", ZMK_HID_USAGE_PAGE(matched), ZMK_HID_USAGE_ID(matched));
+            return matched;
         }
     }
 
-    LOG_DBG("skip magic rule: keycode 0x%08x not found in skip magic rule, repeating", keycode);
+    LOG_DBG("keycode not found in skip magic rule, repeating");
     return keycode;
 }
 
